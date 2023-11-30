@@ -1,11 +1,13 @@
-from socketserver import TCPServer
-from core.server import ThreatedTCPServer,MyTCPHandler
+class Order:
+    def __init__(self,name,price,quantity)->None:
+        self.name = name
+        self.price = price
+        self.quantity = quantity
 
 
-HOST, PORT = "localhost", 8010
-TCPServer.allow_reuse_address = True        
-with ThreatedTCPServer((HOST, PORT), MyTCPHandler) as server:
-    server.serve_forever()
-    
+    def total(self):
+        return self.price * self.quantity
 
 
+order = Order('яблоки',15,12)
+print(order.total())
