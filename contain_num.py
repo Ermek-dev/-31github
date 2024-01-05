@@ -1,10 +1,10 @@
-user_input = input()
-for i in user_input:
-    if i.isdigit():
-        print("Цифра")
-        break
-else:
-    print("Цифр нет")
+# user_input = input()
+# for i in user_input:
+#     if i.isdigit():
+#         print("Цифра")
+#         break
+# else:
+#     print("Цифр нет")
 
 #
 # def containNum(value):
@@ -29,3 +29,13 @@ else:
 #     print('Цифр нет')
 #
 #
+
+
+user_input = input()
+count = 0
+plus = '+'
+star = '*'
+count_plus = user_input.count(plus)
+count_star = user_input.count(star)
+print(f'Символ {plus} встречается {count_plus} раз')
+print(f'Символ {star} встречается {count_star} раз')
