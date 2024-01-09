@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Title</title>
+</head>
+<body>
+
+
+<div class="navbar">
+    <div class="container">
+        <ul>
+            <li>
+                <a href="/">Home</a>
+            </li>
+            <li>
+                <a href="posts/add">Добавить публикацию</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="body">
+    <div class="container">
+        {% if context.posts %}
+        <h2>Публикации</h2>
+        {% for post in context.posts %}
+        <p>Id - {{ post.get('id') }} Title {{ post.get('title') }}</p>
+        {% endfor %}
+        {% else %}
+        <h2>Публикации отсутствуют</h2>
+    {% endif %}
+    </div>
+</div>
+</body>
+</html>
